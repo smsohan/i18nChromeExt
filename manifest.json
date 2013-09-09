@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Rails i18n Missing Translations",
+  "description": "This extention auto produces the missing translation on a page",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "https://*/*", "tabs"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://10.180.9.33:3000/*"],
+      "js": ["jquery.js", "findMissingi18n.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": ["jquery.js"]
+
+}
